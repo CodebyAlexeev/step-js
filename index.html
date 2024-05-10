@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Card</title>
+  <link rel="stylesheet" href="./css/index.css" />
+</head>
+
+<body>
+  <header class="header">
+    <nav>
+      <a href="">
+        <img src="./images/logo.jpg" width="60" height="60" alt="logo" />
+      </a>
+    </nav>
+
+    <div class="buttons">
+      <button class="button" id="loginBtn">Вхід</button>
+      <button id="createVisitBtn" style="display:none;">Створити візит</button>
+    </div>
+  </header>
+
+  <main>
+    <form class="filter-form">
+      <label for="search">Пошук за заголовком:</label>
+      <input type="text" id="search" name="search" placeholder="Пошук..." /><br />
+
+      <label for="status">Пошук за статусом:</label>
+      <select id="status" name="status">
+        <option value="">Оберіть статус</option>
+        <option value="Open">Open</option>
+        <option value="Done">Done</option>
+      </select><br />
+
+      <label for="urgency">Терміновість візиту:</label>
+      <select id="urgency" name="urgency">
+        <option value="">Оберіть терміновість</option>
+        <option value="High">High</option>
+        <option value="Normal">Normal</option>
+        <option value="Low">Low</option>
+      </select><br />
+
+    </form>
+
+    <div id="myModal" class="modal" hidden>
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <form id="loginForm">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required /><br /><br />
+          <label for="password">Пароль:</label>
+          <input type="password" id="password" name="password" required /><br /><br />
+          <button type="submit" id="button-modal">Увійти</button>
+        </form>
+      </div>
+    </div>
+
+    <div id="visitBoard">
+      <h1 id="nameDoctor">No items have been added</h1>
+      <div id="visitContainer"></div>
+    </div>    
+
+    <div id="modalVisit" class="modal" hidden>
+
+      <div class="modal-content">
+
+        <span class="close">&times;</span>
+
+        <select id="selectDoctor" name="doctor">
+          <option value="choose">Оберіть лікаря</option>
+          <option value="cardiologist">Кардіолог</option>
+          <option value="dentist">Стоматолог</option>
+          <option value="therapist">Терапевт</option>
+        </select><br /><br />
+
+        <div id="fieldsRecording" hidden>
+
+          <form id="visitForm">
+            <label for="goal">Ціль візиту:</label>
+            <input type="text" id="goal" name="goal" /><br /><br />
+            <label for="description">Опис візиту:</label>
+            <input type="text" id="description" name="description" /><br /><br />
+            <label for="priority">Терміновість візиту:</label>
+            <select id="priority" name="priority">
+              <option value="Low">Звичайна</option>
+              <option value="Normal">Пріоритетна</option>
+              <option value="High">Невідкладна</option>
+            </select><br /><br />
+            <label for="fullName">ПІБ:</label>
+            <input type="text" id="fullName" name="fullName" /><br /><br />
+
+            <div id="cardiologistFields">
+
+              <label for="preassure">Тиск:</label>
+              <input type="number" id="preassure" name="preassure" /><br /><br />
+              <label for="bodyWeight">Вага:</label>
+              <input type="number" id="bodyWeight" name="bodyWeight"></label><br /><br />
+              <label for="cvd">Серцево-судинні захворювання:</label>
+              <input type="checkbox" id="cvd" name="cvd"><br /><br />
+
+            </div>
+
+            <div id="dentistFields">
+
+              <label for="lastDate">Дата останнього візиту:</label>
+              <input type="text" id="lastDate" name="lastDate" placeholder="DD-MM-YYYY"><br /><br />
+
+            </div>
+
+            <div id="therapistFields">
+
+              <label for="age">Вік:</label>
+              <input type="number" id="age" name="age"><br /><br />
+
+            </div>
+
+            <button type="submit" id="submitModalVisit">Створити візит</button>
+          </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+  <script type="module" src="./js/main.js"></script>
+</body>
+
+</html>
